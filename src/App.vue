@@ -40,12 +40,14 @@ export default {
   },
 };
 </script>
+
 <template>
   <AppHeader @search="getCards" />
   <main>
     <CardList />
   </main>
 </template>
+
 <style lang="scss">
 @use "./styles/generals.scss" as *;
 main {
