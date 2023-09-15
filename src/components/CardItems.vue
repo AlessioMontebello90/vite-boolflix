@@ -1,8 +1,17 @@
 <script>
+import { store } from "./../store";
 export default {
   name: "CardItems",
   props: {
     details: Object,
+  },
+  data() {
+    return {
+      store,
+    };
+  },
+  methods: {
+    flagBuild() {},
   },
 };
 </script>
@@ -19,9 +28,12 @@ export default {
       {{ details.original_title }}
     </div>
 
-    <!-- lenguage -->
-    <div>
-      <img src="path.jpg" :alt="details.original_language" />
+    <!-- language -->
+    <div class="language">
+      <img
+        :src="`./../../public/language/${details.original_language}.jpg`"
+        :alt="details.original_language"
+      />
     </div>
 
     <!-- vote -->
@@ -31,4 +43,13 @@ export default {
   </li>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.language {
+  width: 50px;
+  height: 30px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+</style>

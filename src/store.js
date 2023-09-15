@@ -10,6 +10,7 @@ export const store = reactive({
 
   // variables to search
 
-  titleSearched: "",
+  titleSearched: "spiderman",
   cardList: [],
+  languageFlag: "./../../public/language/en.jpg",
 });
