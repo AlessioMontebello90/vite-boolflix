@@ -4,6 +4,7 @@ import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
 import AppSearch from "./components/AppSearch.vue";
 import CardList from "./components/cardList.vue";
+
 export default {
   components: {
     AppHeader,
