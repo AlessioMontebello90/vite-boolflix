@@ -1,30 +1,41 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
+<script>
+import axios from "axios";
+import { store } from "./store.js";
+import AppHeader from "./components/AppHeader.vue";
+import AppSearch from "./components/AppSearch.vue";
+import CardList from "./components/cardList.vue";
+export default {
+  components: {
+    AppHeader,
+    CardList,
+  },
+  // star data
+  data() {
+    return {
+      store,
+    };
+  },
+  // start methods
+  methods: {
+    getInfoMovie() {
+      let searchUrl = store.apiUrlMovie + store.titleSearched;
+      axios.get(searchUrl).then((ref) => {
+        store.cardList = ref.data.results;
+        console.log(store.cardList);
+      });
+    },
+  },
+  created() {
+    this.getInfoMovie();
+  },
+};
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <AppHeader />
+  <main>
+    <CardList />
+  </main>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<style lang="scss"></style>
