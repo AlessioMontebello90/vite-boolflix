@@ -2,13 +2,13 @@
 import axios from "axios";
 import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
-import AppSearch from "./components/AppSearch.vue";
 import CardList from "./components/cardList.vue";
-
+import CardItems from "./components/CardItems.vue";
 export default {
   components: {
     AppHeader,
     CardList,
+    CardItems,
   },
   // star data
   data() {
@@ -19,24 +19,43 @@ export default {
   // start methods
   methods: {
     getInfoMovie() {
-      let searchUrl = store.apiUrlMovie + store.titleSearched;
-      axios.get(searchUrl).then((ref) => {
+      let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
+      // if (store.titleSearched != 0) {
+      //   searchUrlMovie += store.titleSearched;
+      // }
+      axios.get(searchUrlMovie).then((ref) => {
         store.cardList = ref.data.results;
         console.log(store.cardList);
       });
     },
+    // getInfoTv() {
+    //   let searchUrlTv = store.apiUrlTv + store.titleSearched;
+    //   axios.get(searchUrlTv)
+    //     .then(ref => {
+    //       store.cardList.concat(ref.data.results);
+    //       console.log(store.cardList);
+    //     }
+    //     )
+    // },
+    getCards() {
+      this.getInfoMovie();
+      // this.getInfoTv();
+    },
   },
   created() {
-    this.getInfoMovie();
+    this.getCards();
   },
 };
 </script>
-
 <template>
-  <AppHeader />
+  <AppHeader @search="getCards" />
   <main>
     <CardList />
   </main>
 </template>
-
-<style lang="scss"></style>
+<style lang="scss">
+@use "./styles/generals.scss" as *;
+main {
+  margin: 20px;
+}
+</style>

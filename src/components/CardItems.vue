@@ -1,19 +1,34 @@
 <script>
-import { store } from "../store";
 export default {
   name: "CardItems",
-  data() {
-    return {
-      store,
-    };
+  props: {
+    details: Object,
   },
 };
 </script>
 
 <template>
-  <ul>
-    <li></li>
-  </ul>
+  <li>
+    <!-- title -->
+    <div>
+      {{ details.title }}
+    </div>
+
+    <!-- original title -->
+    <div>
+      {{ details.original_title }}
+    </div>
+
+    <!-- lenguage -->
+    <div>
+      <img src="path.jpg" :alt="details.original_language" />
+    </div>
+
+    <!-- vote -->
+    <div>
+      {{ details.vote_average }}
+    </div>
+  </li>
 </template>
 
 <style lang="scss" scoped></style>

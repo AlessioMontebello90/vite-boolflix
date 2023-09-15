@@ -1,19 +1,32 @@
 <script>
 import { store } from "./../store";
+import CardItems from "./CardItems.vue";
 export default {
   name: "CardList",
+  components: {
+    CardItems,
+  },
   data() {
-    return { store };
+    return {
+      store,
+    };
   },
 };
 </script>
 
 <template>
   <ul>
-    <li v-for="card in store.cardList">
-      {{ card.title }}
-    </li>
+    <CardItems
+      v-for="(card, idx) in store.cardList"
+      :key="idx"
+      :details="card"
+    />
   </ul>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "./../styles/generals.scss" as *;
+li {
+  border: 1px solid black;
+}
+</style>
