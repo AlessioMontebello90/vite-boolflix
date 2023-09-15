@@ -10,7 +10,7 @@ export default {
     CardList,
     CardItems,
   },
-  // star data
+  //  data
   data() {
     return {
       store,
@@ -19,7 +19,6 @@ export default {
   // start methods
   methods: {
     getCards() {
-      // Movie
       let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
       axios.get(searchUrlMovie).then((ref) => {
         store.movieList = ref.data.results;
@@ -30,7 +29,7 @@ export default {
           store.tvList = ref.data.results;
           console.log(store.tvList);
           // unisco i due array
-          this.store.cardList = store.movieList.concat(store.tvList);
+          store.cardList = store.movieList.concat(store.tvList);
           console.log(store.cardList);
         });
       });
