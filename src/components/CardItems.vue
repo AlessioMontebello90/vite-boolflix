@@ -18,18 +18,12 @@ export default {
 
 <template>
   <li>
-    <div>
-      <img
-        :src="`${store.thumbImg}${details.backdrop_path}`"
-        :alt="`motion picture ${details.title}${details.name}`"
-      />
-    </div>
-
     <div v-if="store.movieList.includes(details)">
       <!-- title -->
       <div>
         {{ details.title }}
       </div>
+
       <!-- original title -->
       <div>
         {{ details.original_title }}
@@ -40,6 +34,7 @@ export default {
       <div>
         {{ details.name }}
       </div>
+
       <!-- original name -->
       <div>
         {{ details.original_name }}
@@ -49,13 +44,13 @@ export default {
     <!-- language -->
     <div class="language">
       <img
-        :src="`language/${details.original_language}.jpg`"
+        :src="`./../../public/language/${details.original_language}.jpg`"
         :alt="details.original_language"
       />
     </div>
     <!-- ${details.original_language} -->
     <!-- vote -->
-    <div class="ratings">
+    <div>
       {{ details.vote_average }}
     </div>
   </li>

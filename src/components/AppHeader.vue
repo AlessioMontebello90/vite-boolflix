@@ -13,7 +13,6 @@ export default {
   },
 };
 </script>
-
 <template>
   <header>
     <h1>BoolFlix</h1>
@@ -27,7 +26,6 @@ export default {
     </div>
   </header>
 </template>
-
 <style lang="scss" scoped>
 header {
   display: flex;
