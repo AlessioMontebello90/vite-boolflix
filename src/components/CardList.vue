@@ -15,7 +15,9 @@ export default {
 </script>
 
 <template>
-  <h1>Movie:</h1>
+  <h1>
+    find <span>{{ store.cardList.length }}</span>
+  </h1>
   <ul>
     <CardItems
       v-for="(card, idx) in store.cardList"
@@ -23,11 +25,12 @@ export default {
       :details="card"
     />
   </ul>
-</template>
+  /template>
 
-<style lang="scss" scoped>
-@use "./../styles/generals.scss" as *;
-li {
-  border: 1px solid black;
-}
-</style>
+  <style lang="scss" scoped>
+    @use "./../styles/generals.scss" as *;
+    li {
+      border: 1px solid black;
+    }
+  </style>
+</template>

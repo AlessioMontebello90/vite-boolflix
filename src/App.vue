@@ -10,7 +10,7 @@ export default {
     CardList,
     CardItems,
   },
-  //  data
+  // star data
   data() {
     return {
       store,
@@ -18,20 +18,30 @@ export default {
   },
   // start methods
   methods: {
+    // getInfoMovie() {
+    // },
+    // getInfoTv() {
+    // },
     getCards() {
+      // this.getInfoMovie();
+      // this.getInfoTv();
+      // Movie
       let searchUrlMovie = store.apiUrlMovie + store.titleSearched;
       axios.get(searchUrlMovie).then((ref) => {
         store.movieList = ref.data.results;
-        console.log(store.movieList);
-        // serieTv
-        let searchUrlTv = store.apiUrlTv + store.titleSearched;
-        axios.get(searchUrlTv).then((ref) => {
-          store.tvList = ref.data.results;
-          console.log(store.tvList);
-          // unisco i due array
-          store.cardList = store.movieList.concat(store.tvList);
-          console.log(store.cardList);
-        });
+        // console.log(store.movieList);
+        // cancat array movie end tv
+        store.cardList = store.tvList.concat(store.movieList);
+        console.log(store.cardList);
+      });
+      // serieTv
+      let searchUrlTv = store.apiUrlTv + store.titleSearched;
+      axios.get(searchUrlTv).then((ref) => {
+        store.tvList = ref.data.results;
+        // console.log(store.tvList);
+        // cancat array movie end tv
+        store.cardList = store.movieList.concat(store.tvList);
+        console.log(store.cardList);
       });
     },
   },
@@ -40,14 +50,12 @@ export default {
   },
 };
 </script>
-
 <template>
   <AppHeader @search="getCards" />
   <main>
     <CardList />
   </main>
 </template>
-
 <style lang="scss">
 @use "./styles/generals.scss" as *;
 main {
