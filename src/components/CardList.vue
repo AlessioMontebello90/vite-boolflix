@@ -1,6 +1,7 @@
 <script>
 import { store } from "./../store";
 import CardItems from "./CardItems.vue";
+
 export default {
   name: "CardList",
   components: {
@@ -29,6 +30,7 @@ export default {
 
 <style lang="scss" scoped>
 @use "./../styles/generals.scss" as *;
+
 li {
   border: 1px solid black;
 }

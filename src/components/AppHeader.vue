@@ -1,6 +1,7 @@
 <script>
 import AppSearch from "./AppSearch.vue";
 import { store } from "./../store";
+
 export default {
   name: "AppHeader",
   components: {
@@ -13,6 +14,7 @@ export default {
   },
 };
 </script>
+
 <template>
   <header>
     <h1>BoolFlix</h1>
@@ -26,6 +28,7 @@ export default {
     </div>
   </header>
 </template>
+
 <style lang="scss" scoped>
 header {
   display: flex;
