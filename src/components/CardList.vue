@@ -15,7 +15,9 @@ export default {
 </script>
 
 <template>
-  <h1>Movie:</h1>
+  <h1>
+    find <span>{{ store.cardList.length }}</span>
+  </h1>
   <ul>
     <CardItems
       v-for="(card, idx) in store.cardList"
@@ -23,11 +25,6 @@ export default {
       :details="card"
     />
   </ul>
-
-  <!-- <h1>TvSeries:</h1>
-        <ul>
-            <CardItems v-for="(card, idx) in store.cardList" :key="idx" :details="card" />
-        </ul> -->
 </template>
 
 <style lang="scss" scoped>
