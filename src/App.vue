@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
-import CardList from "./components/cardList.vue";
+import CardList from "./components/CardList.vue";
 import CardItems from "./components/CardItems.vue";
 
 export default {
