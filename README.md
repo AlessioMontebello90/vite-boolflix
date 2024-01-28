@@ -1,7 +1,5 @@
-# Vue 3 + Vite
+Clone Netflix
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Replica del sito"Netflix" utilizzando l'API fornita da The Movie Database e VueJS
 
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+![1701186699749](https://github.com/AlessioMontebello90/vite-boolflix/assets/134722770/ea3c8961-878b-4b21-9f81-ba1b2d1fef20)
